@@ -18,6 +18,11 @@ app.get('/helloworld', function(req,res){
   console.log('app helloworld / requested');
   return res.render("helloworld.html");
 });
+
+app.get('/trainList', function(req,res){
+  console.log('app trainList / requested');
+  return res.render("trainList.html");
+});
 app.listen(port, function(){
   console.log("Application is running:")
   console.log("Listening on " + port);
