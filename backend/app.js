@@ -37,17 +37,16 @@ app.get('/trainList', function(req,res){
 app.post('/addTrain', function(req,res){
   console.log('posted to /addTrain');
   console.log(JSON.stringify(req.body));
-  return res.send("success");
-});
-
-var sql = `
+  var sql = `
    INSERT INTO trains (name,inService,numberOfAvailable) 
    VALUES ('${req.body.nameOfTrain}', '${req.body.inService}', '${req.body.availableTrains}');
   `;
    database.executeQuery(sql);
+  return res.send("success");
+});
+
 
 app.listen(port, function(){
   console.log("Application is running:");
   console.log("Listening on " + port);
 });
-

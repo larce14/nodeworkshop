@@ -5,6 +5,7 @@ var config = require('./config');
 var pg = require('pg');
 var conString = config.DATABASE_CONNECTION_URL;
 
+
 module.exports = function() {
   return {
     executeQuery: function(query, callback){
